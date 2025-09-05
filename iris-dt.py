@@ -80,7 +80,7 @@ import seaborn as sns
 
 # ALSO ADD THIS :
 import dagshub
-dagshub.init(repo_owner='campusx-official', repo_name='mlflow-dagshub-demo', mlflow=True)
+dagshub.init(repo_owner='aamir490', repo_name='mlflow-dagshub-demo', mlflow=True)
 
 
 # CHANGE HERE : - https://dagshub.com/aamir490/mlflow-dagshub-demo.mlflow
