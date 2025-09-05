@@ -76,10 +76,17 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+#-----------------------------------------------------------------------------------------------
+
+# ALSO ADD THIS :
 import dagshub
 dagshub.init(repo_owner='campusx-official', repo_name='mlflow-dagshub-demo', mlflow=True)
 
-mlflow.set_tracking_uri("https://dagshub.com/campusx-official/mlflow-dagshub-demo.mlflow")
+
+# CHANGE HERE : - https://dagshub.com/aamir490/mlflow-dagshub-demo.mlflow
+mlflow.set_tracking_uri("https://dagshub.com/aamir490/mlflow-dagshub-demo.mlflow")
+
+#-------------------------------------------------------------------------------------------------
 
 # Load the iris dataset
 iris = load_iris()
@@ -128,7 +135,7 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(dt, "decision_tree")
 
     # Set tags
-    mlflow.set_tag('author','nitish')
+    mlflow.set_tag('author','AAMIR')
     mlflow.set_tag('model','decision_tree')
 
     print('Accuracy:', accuracy)
