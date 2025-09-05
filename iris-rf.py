@@ -90,6 +90,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
+import joblib  # <-- for saving model locally
 
 # ------------------------
 # 2. Initialize DagsHub & MLflow
@@ -170,12 +171,12 @@ with mlflow.start_run():
         print("⚠️ Skipping __file__ logging (not running from a .py file)")
 
     # ------------------------
-    # 5e. Log Model & Tags
+    # 5e. Log Model & Tags (as artifact)
     # ------------------------
-    mlflow.sklearn.log_model(rf, "random_forest")
+    joblib.dump(rf, "random_forest_model.pkl")  # save locally
+    mlflow.log_artifact("random_forest_model.pkl")  # log as artifact
     mlflow.set_tag('author', 'rahul')
     mlflow.set_tag('model', 'random_forest')
 
     print('Accuracy:', accuracy)
-    print(" ✅ Random Forest model logged in MLflow ")
-# ----------------------------------------------------------------------
+    print(" ✅ Random Forest model logged in MLflow as artifact ")
