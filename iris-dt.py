@@ -135,7 +135,7 @@ with mlflow.start_run():
     mlflow.sklearn.log_model(dt, "decision_tree")
 
     # Set tags
-    mlflow.set_tag('author','AAMIR')
+    mlflow.set_tag('author','nitishaa')
     mlflow.set_tag('model','decision_tree')
 
     print('Accuracy:', accuracy)
